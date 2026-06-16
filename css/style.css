@@ -1,146 +1,337 @@
-header {
-    position: relative;
+/* VARIÁVEIS CSS */
+
+:root{
+    --cor-fundo: #0a0a0f;
+    --cor-header: #111122;
+    --cor-destaque: #e5ff00;
+    --cor-texto: #e0e0e0;
+    --cor-card: #111;
+    --cor-botao: #ff007f;
+    --cor-botao-hover: #ff4da6;
+    --fonte-principal: Arial, sans-serif;
 }
 
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+/* CONFIGURAÇÕES GERAIS */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.logo img {
-    width: 100px; /* ajuste como quiser */
+body{
+    font-family: var(--fonte-principal);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #0a0a0f;
-    color: #e0e0e0;
-}
-header {
-    background: #111122;
-    padding: 15px;
-    text-align: center;
-}
-a {
-    margin: 10px;
-    color: #e5ff00;
-    text-decoration: none;
-}
-a:hover { color: #FF0000; }
-main { padding: 20px; }
-footer {
-    background: #111122;
-    text-align: center;
-    padding: 10px;
-}
-img { display: block;
-  margin: 0 auto;  }
-table, th, td { border: 1px solid #e5ff00; border-collapse: collapse; padding: 8px; }
+/* HEADER */
 
-.personagens {
-  padding: 40px;
-  text-align: center;
+header{
+    background: var(--cor-header);
+    text-align:center;
+    padding:20px;
+    position:relative;
 }
 
-.lista-personagens {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.logo{
+    position:absolute;
+    top:10px;
+    left:10px;
 }
 
-.card {
-  background-color: #111;
-  border-radius: 10px;
-  width: 250px;
-  padding: 15px;
-  color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.logo img{
+    width:100px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
+/* MENU */
+
+nav{
+    margin-top:15px;
 }
 
-.card h3 {
-  margin-top: 10px;
-  color: yellow;
+nav a{
+    color: var(--cor-destaque);
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0a0a0a;
-  color: white;
+nav a:hover{
+    color:#ff0000;
 }
 
-header {
-  background-color: #111;
-  text-align: center;
-  padding: 20px;
+/* BOTÃO HAMBURGER */
+
+/* ==========================
+   MENU HAMBURGER
+========================== */
+
+.menu-toggle{
+    display:block;
+    margin:15px auto;
+    background:none;
+    border:2px solid var(--cor-destaque);
+    color:var(--cor-destaque);
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:22px;
+    transition:0.3s;
 }
 
-nav a {
-  color: yellow;
-  text-decoration: none;
+.menu-toggle:hover{
+    background:var(--cor-destaque);
+    color:black;
 }
 
-.conteudo {
-  padding: 40px;
-  text-align: center;
+.menu{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    max-height:500px;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
 }
 
-.conteudo img {
-  display: block;
-  margin: 0 auto;
+.menu.fechado{
+    max-height:0;
 }
 
-.botao {
-  display: inline-block;
-  background-color: #ff007f;
-  color: white;
-  padding: 15px 25px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 20px;
-  transition: 0.3s;
+/* MAIN */
+
+main{
+    padding:20px;
 }
 
-.botao:hover {
-  background-color: #ff4da6;
+h1,h2,h3{
+    margin-bottom:15px;
 }
 
-
-.mapa ol {
-    list-style-type: decimal;
-    padding-left: 20px;
+p{
+    line-height:1.6;
+    margin-bottom:15px;
 }
 
-.mapa li {
-    margin-bottom: 30px;
+/* IMAGENS */
+
+img{
+    display:block;
+    margin:0 auto;
+    max-width:100%;
 }
 
-.mapa img {
-    width: 60%;
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-    border: 2px solid #e5ff00;
+/* BOTÃO */
+
+.botao{
+    display:inline-block;
+    background-color:var(--cor-botao);
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:20px;
+    transition:0.3s;
+    animation: brilho 2s infinite;
 }
 
-.armas table {
-    width: 100%;
-    margin-top: 20px;
+.botao:hover{
+    background-color:var(--cor-botao-hover);
 }
 
-.armas th {
-    background-color: #111122;
-    color: #e5ff00;
+/* ANIMAÇÃO CSS3 */
+
+@keyframes brilho{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
 }
 
-.armas td {
-    background-color: #0a0a0f;
+/* PERSONAGENS */
+
+.personagens{
+    padding:40px;
+    text-align:center;
+}
+
+.lista-personagens{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background-color:var(--cor-card);
+    border-radius:10px;
+    width:250px;
+    padding:15px;
+    color:white;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card h3{
+    color:var(--cor-destaque);
+    margin-top:10px;
+}
+
+/* MAPA */
+
+.mapa ol{
+    padding-left:20px;
+}
+
+.mapa li{
+    margin-bottom:30px;
+}
+
+.mapa img{
+    width:60%;
+    border-radius:10px;
+    border:2px solid var(--cor-destaque);
+}
+
+/* TABELAS */
+
+table{
+    width:100%;
+}
+
+table,
+th,
+td{
+    border:1px solid var(--cor-destaque);
+    border-collapse:collapse;
+    padding:8px;
+}
+
+.armas th{
+    background-color:var(--cor-header);
+    color:var(--cor-destaque);
+}
+
+.armas td{
+    background-color:var(--cor-fundo);
+}
+
+/* CONTEÚDO SÉRIE */
+
+.conteudo{
+    padding:40px;
+    text-align:center;
+}
+
+/*FORMULÁRIOS*/
+
+form{
+    max-width:500px;
+    margin:auto;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    background:var(--cor-botao);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:var(--cor-botao-hover);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--cor-header);
+    text-align:center;
+    padding:10px;
+    margin-top:30px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width:768px){
+
+    .logo img{
+        width:70px;
+    }
+
+    .menu-toggle{
+        display:block;
+        margin:auto;
+    }
+
+    nav{
+        display:none;
+        flex-direction:column;
+        gap:10px;
+        margin-top:15px;
+    }
+
+    nav.ativo{
+        display:flex;
+    }
+
+    nav a{
+        margin:5px 0;
+    }
+
+    .lista-personagens{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .mapa img{
+        width:100%;
+    }
+
+    table{
+        font-size:12px;
+    }
+
+    .conteudo{
+        padding:20px;
+    }
+
+    .botao{
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    .menu{
+    flex-direction:column;
+    align-items:center;
+}
 }
