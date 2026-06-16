@@ -64,21 +64,21 @@ nav a:hover{
 
 /* BOTÃO HAMBURGER */
 
-/* ==========================
-   MENU HAMBURGER
-========================== */
-
 .menu-toggle{
-    display:block;
-    margin:15px auto;
-    background:none;
-    border:2px solid var(--cor-destaque);
-    color:var(--cor-destaque);
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:22px;
-    transition:0.3s;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    background: none;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    font-size: 22px;
+    transition: 0.3s;
 }
 
 .menu-toggle:hover{
